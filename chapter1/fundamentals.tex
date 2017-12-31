@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Sibi <sibi@psibi.in>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\newcommand{\BigO}[1]{\ensuremath{\operatorname{O}\bigl(#1\bigr)}}
+\setlength\parskip{\baselineskip}
+\begin{document}
+\title{Chapter 1 - Fundamentals}
+\author{Sibi}
+\date{\today}
+\maketitle
+
+% See here: http://tex.stackexchange.com/a/43009/69223
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+\newpage
+
+\section{Solution 1}
+\begin{itemize}
+\item $\{ \epsilon, a, b, c, aa, bb, cc, ab, ba, ac, ca, bc, cb \}$
+\item $\{ \epsilon, aaa,aaaa,aaaa,aaaaa \}$
+\item $\{ \epsilon \}$
+\item $\{ \epsilon, 0,3,6,9,12,15,18 \}$
+\item $\{ \epsilon, "b","bb","a","ab","abb" \}$
+\end{itemize}
+
+\section{Solution 2}
+$\{a^nb^n\}$ \\
+$\{a^nb^m\ | n > m\}$
+
+\end{document}
