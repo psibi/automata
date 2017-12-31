@@ -10,6 +10,9 @@
 
 import Data.Monoid ((<>))
 import Control.Monad (when)
+import Data.List ((\\))
+import Data.Char (intToDigit)
+import Numeric
 
 ex2 :: [String]
 ex2 = do
@@ -40,5 +43,36 @@ ex5 = do
       n = [0..1]
       m = [0..2]
 
+ex3a :: IO ()
+ex3a = mapM_ putStrLn soln
+    where
+      soln :: [String]
+      soln = do
+        n <- bin
+        return $ (showIntAtBase 2 intToDigit n) ""
+      bin = [0..10]
+
+ex3b :: [Int]
+ex3b = filter (\x -> x /= 50) primes
+  where
+    primes :: [Int]
+    primes = do
+         p <- primesTo 20
+         if (p < 20)
+         then return p
+         else return 50
+    primesTo m = sieve [2..m]  
+             where 
+             sieve (x:xs) = x : sieve (xs \\ [x,x+x..m])
+             sieve [] = []
+
+ex3c :: [String]
+ex3c = do
+  x <- alpha
+  y <- alpha
+  return $ x:y:[]
+    where
+      alpha = ['a'..'z']
+
 main :: IO ()
-main = print ex2 >> print ex4 >> print ex5
+main = print ex2 >> print ex4 >> print ex5 >> print ex3b >> print ex3c >> ex3a
