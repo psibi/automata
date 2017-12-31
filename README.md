@@ -1,5 +1,4 @@
 # Automata theory
 
-My notes for the Stanford's course on
-[Automata theory](https://lagunita.stanford.edu/courses/course-v1:ComputerScience+Automata+SelfPaced/about).
+Contains my solutions to [Adam Brooks book on Formal language](https://www.amazon.in/Formal-Language-Adam-Brooks-Webber/dp/1590281977/ref=asap_bc?ie=UTF8)
 
