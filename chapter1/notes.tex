@@ -1,0 +1,65 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Sibi <sibi@psibi.in>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\newcommand{\BigO}[1]{\ensuremath{\operatorname{O}\bigl(#1\bigr)}}
+\setlength\parskip{\baselineskip}
+\begin{document}
+\title{Chapter 1 - Fundamentals}
+\author{Sibi}
+\date{\today}
+\maketitle
+
+% See here: http://tex.stackexchange.com/a/43009/69223
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+\newpage
+
+\section{Alphabets}
+
+An alphabet is any finite set of symbols.
+
+Example: $\Sigma = \{ a, b \}$
+
+Note that $a$ and $b$ are just symbols and they have no meaning associated with them i.e there is no semantics.
+
+\section{String}
+
+A string is a finite sequence of zero or more symbols.
+
+Example of strings are $abbb$ and $0101$.
+
+When a string is a part of particular alphabet $\Sigma$, we say that the string is ``a string over $\Sigma$''.
+
+$|abbb| = 4$
+
+The special string $\varepsilon$ is used to represent the string of length zero.
+
+\section{Languages}
+
+A language is a set of strings over some fixed alphabet.
+
+The Kleene closue of an alphabet $\Sigma$, written $\Sigma^*$, is the set of all strings over $\Sigma$.
+
+Except for the special case of $\Sigma = {}$, the Kleene closure of any alphabet is an infinite set.
+
+
+\end{document}
